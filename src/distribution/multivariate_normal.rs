@@ -98,6 +98,22 @@ impl MultivariateNormal {
                 .ln(),
         )
     }
+
+    pub fn mu(&self) -> &DVector<f64> {
+        &self.mu
+    }
+
+    pub fn cov(&self) -> &DMatrix<f64> {
+        &self.cov
+    }
+
+    pub fn precision(&self) -> &DMatrix<f64> {
+        &self.precision
+    }
+
+    pub fn pdf_const(&self) -> f64 {
+        self.pdf_const
+    }
 }
 
 impl ::rand::distributions::Distribution<DVector<f64>> for MultivariateNormal {
